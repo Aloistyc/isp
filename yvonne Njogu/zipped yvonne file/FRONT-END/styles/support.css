@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+form {
+    background: white;
+    padding: 30px; /* Increased padding */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Increased max-width */
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px; /* Increased margin */
+}
+ 
+input, select {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    margin-bottom: 20px; /* Increased margin */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Increased font size */
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px; /* Increased padding */
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px; /* Increased font size */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 90%;
+    }
+}

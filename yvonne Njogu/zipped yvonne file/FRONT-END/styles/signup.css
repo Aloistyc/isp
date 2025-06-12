@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px; /* Increased width */
+    margin: auto;
+    padding: 30px; /* Increased padding */
+    background: white;
+    border-radius: 12px; /* Slightly larger border radius */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Added margin for spacing */
+}
+
+label {
+    margin-top: 15px; /* Increased margin */
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px; /* Increased padding for inputs */
+    margin: 10px 0; /* Increased margin */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Larger border radius for inputs */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.toggle-password {
+    cursor: pointer;
+    margin-left: -25px;
+    z-index: 1;
+}
+
+input[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 12px; /* Increased padding */
+    width: 100%;
+    border-radius: 6px; /* Larger border radius */
+    cursor: pointer;
+    font-size: 16px; /* Increased font size */
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support Form</title>
+  <link rel="stylesheet" href="styles/support.css" />
+</head>
+<body>
+
+  <form id="SupportForm" action="Support.php" method="POST">
+    <label for="idNumber">ID Number:</label>
+    <input type="text" id="idNumber" name="idNumber" required />
+
+    <label for="clientName">Client Name:</label>
+    <input type="text" id="clientName" name="clientName" required />
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required />
+
+    <label for="networkProblem">Select type of network problem:</label>
+    <select id="networkProblem" name="network_problem" required>
+      <option value="" disabled selected>Select network problem</option>
+      <option value="Wi-Fi Connected But No Internet">Wi-Fi Connected But No Internet</option>
+      <option value="Apps Not Loading">Apps Not Loading</option>
+      <option value="Someone Is Stealing My Wi-Fi">Someone Is Stealing My Wi-Fi</option>
+      <option value="Can't Connect to Wi-Fi">Can't Connect to Wi-Fi</option>
+      <option value="Frequent Disconnections from Wi-Fi">Frequent Disconnections from Wi-Fi</option>
+      <option value="Weak Wi-Fi Signal">Weak Wi-Fi Signal</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

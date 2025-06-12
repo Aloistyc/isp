@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles/signup.css"> <!-- Link to CSS file -->
+    <script>
+        // Toggle password visibility
+        function togglePassword(id) {
+            var passwordField = document.getElementById(id);
+            var type = passwordField.type === "password" ? "text" : "password";
+            passwordField.type = type;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="signup.php" method="POST">
+            <label for="name">Client Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="id-number">ID Number:</label>
+            <input type="text" id="id-number" name="id-number" required>
+
+            <label for="password">Password:</label>
+            <div style="display: flex; align-items: center;">
+                <input type="password" id="password" name="password" required>
+                <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+            </div>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <div style="display: flex; align-items: center;">
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
+            </div>
+
+            <label for="wifiPackage">Select WiFi Package:</label>
+            <select id="wifiPackage" name="wifiPackage" required>
+                <option value="" disabled selected>Select a package</option>
+                <option value="basic">10Mbps Kes 1,500/=</option>
+                <option value="standard">20Mbps Kes 2,500/=</option>
+                <option value="premium">30Mbps Kes 3,500/=</option>
+                <option value="family">40Mbps Kes 5,500/=</option>
+                <option value="business">50Mbps Kes 7,500/=</option>
+                <option value="enterprise">100Mbps Kes 10,500/=</option>
+            </select>
+
+            <label for="area">Area for WiFi Installation:</label>
+            <select id="area" name="area" required>
+                <option value="" disabled selected>Select your area</option>
+                <option value="limuru">Limuru</option>
+                <option value="muthiga">Muthiga</option>
+                <option value="kikuyu">Kikuyu</option>
+                <option value="regen">Regen</option>
+                <option value="zambezi">Zambezi</option>
+                <option value="uthiru">Uthiru</option>
+                <option value="nairobi">Nairobi</option>
+                <option value="kangemi">Kangemi</option>
+                <option value="westlands">Westlands</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

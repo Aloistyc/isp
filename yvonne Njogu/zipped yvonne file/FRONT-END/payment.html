@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <link rel="stylesheet" href="styles/payment.css">
+  <style>
+    #bankDetails, #mpesaInstructions {
+      display: none;
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #333;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="paymentForm" action="payment.php" method="POST">
+    <label for="idNumber">ID Number:</label>
+    <input type="text" id="idNumber" name="idNumber" required>
+
+    <label for="clientName">Client Name:</label>
+    <input type="text" id="clientName" name="clientName" required>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+    <label for="wifiPackage">Select WiFi Package:</label>
+    <select id="wifiPackage" name="wifiPackage" required>
+      <option value="" disabled selected>Select a package</option>
+      <option value="basic">10Mbps Kes 1,500/=</option>
+      <option value="standard">20Mbps Kes 2,500/=</option>
+      <option value="premium">30Mbps Kes 3,500/=</option>
+      <option value="family">40Mbps Kes 5,500/=</option>
+      <option value="business">50Mbps Kes 7,500/=</option>
+      <option value="enterprise">100Mbps Kes 10,500/=</option>
+    </select>
+
+    <label for="paymentMethod">Payment Method:</label>
+    <select id="paymentMethod" name="paymentMethod" required>
+      <option value="" disabled selected>Select a method</option>
+      <option value="mpesa">M-pesa</option>
+      <option value="bank">Bank Transfer</option>
+    </select>
+
+    <!-- Bank Details -->
+    <div id="bankDetails">
+      <strong>Bank Name:</strong> Equity Bank<br>
+      <strong>Account Name:</strong> Wiwatech Agencies<br>
+      <strong>Account Number:</strong> 1234567890<br>
+      <strong>Branch:</strong> Limuru
+    </div>
+
+    <!-- M-Pesa Instructions -->
+    <div id="mpesaInstructions">
+      <strong>How to Pay via M-Pesa:</strong><br>
+      1. Go to M-Pesa Menu<br>
+      2. Select "Lipa na M-Pesa"<br>
+      3. Select "Paybill"<br>
+      4. Enter Business Number: <strong>123456</strong><br>
+      5. Enter Account Number: <strong>Your ID Number</strong><br>
+      6. Enter Amount (as per package)<br>
+      7. Enter your M-Pesa PIN and press OK
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- JavaScript -->
+  <script>
+    const paymentMethodSelect = document.getElementById('paymentMethod');
+    const bankDetailsDiv = document.getElementById('bankDetails');
+    const mpesaInstructionsDiv = document.getElementById('mpesaInstructions');
+
+    paymentMethodSelect.addEventListener('change', function () {
+      const selected = this.value;
+
+      // Reset both sections
+      bankDetailsDiv.style.display = 'none';
+      mpesaInstructionsDiv.style.display = 'none';
+
+      if (selected === 'bank') {
+        bankDetailsDiv.style.display = 'block';
+      } else if (selected === 'mpesa') {
+        mpesaInstructionsDiv.style.display = 'block';
+        alert('Follow the M-Pesa instructions shown below to complete your payment.');
+      }
+    });
+  </script>
+
+</body>
+</html>
